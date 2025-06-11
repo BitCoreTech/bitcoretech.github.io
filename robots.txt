@@ -3,10 +3,9 @@ Allow: /index.html
 Allow: /home.html
 Allow: /search.html
 Allow: /app.html
-Allow: /ads.php
 Allow: /TOU.html
 Allow: /Privacy.html
 Disallow: /contact.html
 Disallow: /login.html
 Disallow: /signup.html
-Disallow: /*.php$
+Disallow: /*.php
