@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /index.html
 Allow: /home.html
 Allow: /search.html
 Allow: /app.html
