@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <title>Error 404</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f8f9fa;
+                color: #343a40;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                background: linear-gradient(to right, #00FFFF, #0000FF);
+                display: flex;
+                justify-content: center; /* Centers horizontally */
+                align-items: center; /* Centers vertically */
+                height: 100vh; /* Full viewport height */
+                margin: 0;
+
+            }
+
+            main {
+                padding: 20px;
+                background: #FFFFFF; 
+                margin: 20px;
+                border-radius: 10px;
+                display: inline-block;
+                box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            h1 {
+                font-size: 2.5em;
+                color: red;
+                margin-bottom: 10px;
+            }
+
+            p {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+            }
+
+            a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .btn {
+                display: inline-block;
+                background-color: #007bff;
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 1em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+
+            .btn:hover {
+                background-color: #0056b3;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ...existing code... -->
+<main>
+    <h1 title="This webpage is not found!">
+        <i class="fa-solid fa-triangle-exclamation"></i> 
+        <span id="error-code">Error 404</span>
+    </h1>
+    <hr>
+    <p>We are having trouble finding <b id="site"></b>.</p>
+    <p>Make sure that the URL you typed does not have a <b>typo</b> or contain a <b>subdomain</b>.</p>
+    <div>Try clearing cache (CTRL + Shift + Del) or <a href="https://forms.gle/rdPCEFufju4ofkTJ7">Report Bug</a></div><br>
+    <button onclick="goBack()" class="btn">Back</button>
+</main>
+<script>
+    // Show the current URL
+    document.getElementById("site").textContent = window.location.href;
+
+    // Get error code from query string, e.g., ?error=404
+    const params = new URLSearchParams(window.location.search);
+    const error = params.get('error');
+    if (error) {
+        document.getElementById("error-code").textContent = "Error " + error;
+    }
+
+    function goBack() {
+        window.history.back();
+    }
+</script>
+    </body>
+</html>
